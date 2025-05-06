@@ -6,7 +6,7 @@ export const config = {
   
     updateJob: false,
     specs: [
-      './test/specs/**.spec.ts'
+      './test/specs/**/*.spec.ts'
     ],
     exclude: [],
 
