@@ -1,6 +1,6 @@
-import BasePage from "./basePage.ts";
-import { getSwipeLeftCoordinates, getSwipeUpCoordinates } from '../../support/swipeHelper.ts';
-import { locatorsTexts } from "../../support/constants.ts";
+import BasePage from "./basePage";
+import { getSwipeLeftCoordinates, getSwipeUpCoordinates } from '../../support/swipeHelper';
+import { locatorsTexts } from "../../support/constants";
 
 class SwipePage extends BasePage {
 
@@ -12,7 +12,7 @@ class SwipePage extends BasePage {
       await this.tapElement(this.swipeTab);
   }
 
-  async swipeUntilLastCardVisible(maxSwipes: number = 10): Promise<boolean> {
+  async swipeUntilLastCardVisible(maxSwipes = 10) {
     const { startX, endX, y } = await getSwipeLeftCoordinates();
     for (let i = 0; i < maxSwipes; i++) {
       const isVisible = await this.lastCardText.isDisplayed().catch(() => false);
@@ -23,7 +23,7 @@ class SwipePage extends BasePage {
     return false;
   }
 
-  async swipeToLogo(maxSwipes: number = 10): Promise<boolean> {
+  async swipeToLogo(maxSwipes = 10) {
     const { x, startY, endY } = await getSwipeUpCoordinates();
     for (let i = 0; i < maxSwipes; i++) {
       await this.swipeUp(startY, endY, x);

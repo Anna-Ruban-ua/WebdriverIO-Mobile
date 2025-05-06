@@ -1,4 +1,4 @@
-import BasePage from "./basePage.ts";
+import BasePage from "./basePage";
 
 class LoginPage extends BasePage {
 
@@ -19,7 +19,7 @@ class LoginPage extends BasePage {
         await this.tapElement(this.signUpTab);
     }
 
-    async fillInLoginTab(email: string, password: string) {
+    async fillInLoginTab(email, password) {
         await this.enterText(this.emailInput, email);
         await this.enterText(this.passwordInput, password);
     }
@@ -28,7 +28,7 @@ class LoginPage extends BasePage {
         await this.tapElement(this.loginButton);
     }
 
-    async fillInSignUpTab(email: string, password: string, confirmPassword: string) {
+    async fillInSignUpTab(email, password, confirmPassword) {
         await this.enterText(this.emailInput, email);
         await this.enterText(this.passwordInput, password);
         await this.enterText(this.confirmPasswordInput, confirmPassword);

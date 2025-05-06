@@ -1,6 +1,6 @@
-import loginPage from "../pages/loginPage.ts";
-import { generateValidEmail, generateValidPassword } from "../../support/dataGenerator.ts";
-import { successMessages } from "../../support/constants.ts";
+import loginPage from "../pages/loginPage";
+import { generateValidEmail, generateValidPassword } from "../../support/dataGenerator";
+import { successMessages } from "../../support/constants";
 
 describe('Sign Up Functionality', () => {
     beforeEach(async () => {

@@ -1,6 +1,6 @@
-import formsPage from "../pages/formsPage.ts";
-import { generatePhrase } from "../../support/dataGenerator.ts";
-import { successMessages } from "../../support/constants.ts";
+import formsPage from "../pages/formsPage";
+import { generatePhrase } from "../../support/dataGenerator";
+import { successMessages } from "../../support/constants";
 
 describe('Form Validation', () => {
     beforeEach(async () => {
@@ -28,7 +28,7 @@ describe('Form Validation', () => {
         await formsPage.closeMessageWindow();
 
         await formsPage.swipeToInactiveAndTap();
-        expect(formsPage.successMessage).not.toBeDisplayed;
+        expect(formsPage.successMessage).not.toBeDisplayed();
     
     });
 });

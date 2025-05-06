@@ -2,18 +2,18 @@
 
 ## Summary of Repo
 
-This repository contains automated mobile UI tests for the Android Native Demo App using WebdriverIO and TypeScript. The project follows the Page Object Model (POM) design pattern, uses random value generation, and integrates with BrowserStack for cloud-based device testing. It includes Allure Report for test reporting and GitHub Actions for CI/CD execution.
+This repository contains automated mobile UI tests for the Android Native Demo App using WebdriverIO and JavaScript. The project follows the Page Object Model (POM) design pattern, uses random value generation, and integrates with BrowserStack for cloud-based device testing. It includes Allure Report for test reporting and GitHub Actions for CI/CD execution.
 
 ## Test Cases
 
 Detailed test cases are documented in [this spreadsheet](https://docs.google.com/spreadsheets/d/1kFxCbMbhzeUhoP5vcxhSACwCvcWFo7M_DHx_i7fOb7Q/edit?pli=1&gid=0#gid=0).
 
-## 📄 Latest [Allure Report](example from executed test cases).
+## 📄 Latest [Allure Report](https://dfgh).
 
 ## Requirements
 
 * Node.js (latest LTS recommended)
-* TypeScript
+* JavaScript
 * WebdriverIO v9
 * Appium
 * BrowserStack account

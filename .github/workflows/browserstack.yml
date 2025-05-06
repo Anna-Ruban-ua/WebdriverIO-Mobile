@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run tests on Pixel 3 (Android 10)
+      - name: Run tests on Pixel 3 (Android 9)
         run: npm run test:bs:pixel3
         env:
           BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}

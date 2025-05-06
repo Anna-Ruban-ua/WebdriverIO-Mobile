@@ -1,5 +1,5 @@
-import BasePage from "./basePage.ts";
-import { getSwipeUpCoordinates } from '../../support/swipeHelper.ts';
+import BasePage from "./basePage";
+import { getSwipeUpCoordinates } from '../../support/swipeHelper';
 
 
 class FormsPage extends BasePage {
@@ -21,7 +21,7 @@ class FormsPage extends BasePage {
         await this.tapElement(this.formsTab);
     }
 
-    async fillInInputField(text: string) {
+    async fillInInputField(text) {
         await this.enterText(this.inputField, text);
     }
 
@@ -51,15 +51,15 @@ class FormsPage extends BasePage {
         await this.tapElement(this.okButton);
     }
 
-    async getElementByText(text: string) {
+    async getElementByText(text) {
         return $(`android=new UiSelector().text("${text}")`);
     }
 
-    async selectAndVerifyAllDropdownOptions(): Promise<void> {
+    async selectAndVerifyAllDropdownOptions() {
         await this.tapElement(this.dropdown);
             const options = this.dropdownOptions;
 
-            for (let i = 1; i < await options.length; i++) {
+            for (let i = 1; i < options.length; i++) {
                 const optionText = await this.getElementText(options[i]);
                 await this.tapElement(options[i]);
 
