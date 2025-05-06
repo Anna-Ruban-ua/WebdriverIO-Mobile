@@ -21,8 +21,8 @@
     "typescript": "^5.8.3"
   },
   "scripts": {
-    "test:bs:pixel3": "wdio run wdio.pixel3.conf.ts",
-    "test:bs:pixel7": "wdio run wdio.pixel7.conf.ts",
+    "test:bs:pixel3": "wdio run configs/wdio.pixel3.conf.ts",
+    "test:bs:pixel7": "wdio run configs/wdio.pixel7.conf.ts",
     "test:bs:all": "npm run test:bs:pixel3 && npm run test:bs:pixel7",
     "report:allure:generate": "allure generate ./allure-results --clean -o ./allure-report",
     "report:allure:open": "allure open ./allure-report"
