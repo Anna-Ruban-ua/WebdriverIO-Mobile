@@ -1,27 +1,99 @@
-# Repo with test task for browserstack
+# WebdriverIO Mobile Automation Project
 
-## Task
-1.  Clone repo and install all dependencies.
-2.  Upload app Android-NativeDemoApp to browserstack using API ([Link](https://www.browserstack.com/docs/app-automate/api-reference/appium/apps#upload-an-app)) and add unique ID to the ```wdio.conf.js```.
-3.  Create test 5 test cases (locators can be found using [Appium Inspector](https://github.com/appium/appium-inspector/releases) that conected to the Browserstack account).
-4.  Create workflow with using secrets (for user and key in capabilities)([description of secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets)).
-5.  Create 2 config files (with different devices)
+## Summary of Repo
 
-## Tips
-1.  You can create multiple accounts in browserstack (demo trial - 100 minutes).
-2.  First of all find all necessary locators.
-3.  In the Appium Inspector at the header choose ```Select Cloud Providers -> Browserstack``` and into ```JSON Representation``` insert the next:
+This repository contains automated mobile UI tests for the Android Native Demo App using WebdriverIO and TypeScript. The project follows the Page Object Model (POM) design pattern, uses random value generation, and integrates with BrowserStack for cloud-based device testing. It includes Allure Report for test reporting and GitHub Actions for CI/CD execution.
+
+## Test Cases
+
+Detailed test cases are documented in [this spreadsheet](https://docs.google.com/spreadsheets/d/1kFxCbMbhzeUhoP5vcxhSACwCvcWFo7M_DHx_i7fOb7Q/edit?pli=1&gid=0#gid=0).
+
+## 📄 Latest [Allure Report](example from executed test cases).
+
+## Requirements
+
+* Node.js (latest LTS recommended)
+* TypeScript
+* WebdriverIO v9
+* Appium
+* BrowserStack account
+* Allure Commandline
+* GitHub (for CI/CD and version control)
+
+## Setup Instructions
+
+1. **Clone the repository:**
+
+```sh
+git clone https://github.com/Anna-Ruban-ua/WebdriverIO-Mobile
 ```
-{
-  "appium:protocol": "https",
-  "appium:hostname": "hub.browserstack.com",
-  "appium:path": "/wd/hub",
-  "appium:maxInstances": 1,
-  "appium:app": "Your App ID is here",
-  "appium:os_version": "9.0",
-  "appium:deviceName": "Google Pixel 3",
-  "platformName": "Android",
-  "appium:autoAcceptAlerts": "true",
-  "appium:browserstack.appium_version": "1.22.0"
-}
+
+2. **Navigate into the project directory:**
+
+```sh
+cd WebdriverIO-Mobile
 ```
+
+3. **Install dependencies:**
+
+```sh
+npm install
+```
+
+4. **Prepare your BrowserStack credentials:**
+
+   * Go to [BrowserStack Account Settings](https://www.browserstack.com/accounts/settings)
+   * Copy your Username and Access Key
+   * Add them as GitHub Secrets:
+
+     * `BROWSERSTACK_USERNAME`
+     * `BROWSERSTACK_ACCESS_KEY`
+
+5. **Upload your app to BrowserStack with a custom ID:**
+
+```sh
+curl -u "$BROWSERSTACK_USERNAME:$BROWSERSTACK_ACCESS_KEY" \
+  -X POST "https://api-cloud.browserstack.com/app-automate/upload" \
+  -F "file=@/path/to/Android-NativeDemoApp-0.4.0.apk" \
+  -F "custom_id=NativeDemoApp"
+```
+
+## Run Tests
+
+### Run tests on BrowserStack Pixel 3:
+
+```sh
+npm run test:bs:pixel3
+```
+
+### Run tests on BrowserStack Pixel 7 Pro:
+
+```sh
+npm run test:bs:pixel7
+```
+
+### Run tests on both devices:
+
+```sh
+npm run test:bs:all
+```
+
+## Generate Report
+
+### Generate Allure Report:
+
+```sh
+npm run report:allure:generate
+```
+
+### Open Allure Report:
+
+```sh
+npm run report:allure:open
+```
+
+## CI/CD with GitHub Actions
+
+* The `.github/workflows/browserstack.yml` file contains the CI pipeline.
+* On every push, tests are executed on BrowserStack.
+* Allure reports are generated and deployed.
