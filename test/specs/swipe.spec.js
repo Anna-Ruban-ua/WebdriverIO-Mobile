@@ -1,4 +1,4 @@
-import swipePage from "../pages/swipePage.ts";
+import swipePage from "../pages/swipePage";
 
 describe('Swipe Validation', () => {
   beforeEach(async () => {

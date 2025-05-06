@@ -1,21 +1,21 @@
 export default class BasePage {
 
-  async tapElement(element: ChainablePromiseElement) {
+  async tapElement(element) {
     await element.waitForDisplayed();
-    await element.tap();
+    await element.click();
   }
 
-  async enterText(element: ChainablePromiseElement, text: string) {
+  async enterText(element, text) {
     await element.waitForDisplayed();
     await element.setValue(text);
   }
 
-  async getElementText(element: ChainablePromiseElement): Promise<string> {
+  async getElementText(element) {
     await element.waitForDisplayed();
     return await element.getText();
   }
 
-  async swipeLeft(startX: number, endX: number, y: number): Promise<void> {
+  async swipeLeft(startX, endX, y) {
     await driver.performActions([
       {
         type: 'pointer',
@@ -30,10 +30,9 @@ export default class BasePage {
         ]
       }
     ]);
-    await driver.releaseActions();
   }
 
-  async swipeUp(startY: number, endY: number, x: number): Promise<void> {
+  async swipeUp(startY, endY, x) {
     await driver.performActions([
       {
         type: 'pointer',
@@ -48,10 +47,9 @@ export default class BasePage {
         ]
       }
     ]);
-    await driver.releaseActions();
   }
 
-  async dragAndDropElement(origin: ChainablePromiseElement, target: ChainablePromiseElement) {
+  async dragAndDropElement(origin, target) {
     await origin.waitForDisplayed({ timeout: 5000 });
     await target.waitForDisplayed({ timeout: 5000 });
       
@@ -67,7 +65,6 @@ export default class BasePage {
         { type: 'pointerUp', button: 0 }
       ]
     }]);
-    await driver.releaseActions();
   }
 
 }

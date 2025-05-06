@@ -1,5 +1,5 @@
-import dragPage from "../pages/dragPage.ts";
-import { successMessages } from "../../support/constants.ts";
+import dragPage from "../pages/dragPage";
+import { successMessages } from "../../support/constants";
 
 describe('Drag Validation', () => {
   it('TC05 Drag Validation', async () => {

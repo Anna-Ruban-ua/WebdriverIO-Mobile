@@ -1,4 +1,4 @@
-import BasePage from "./basePage.ts";
+import BasePage from "./basePage";
 
 class DragPage extends BasePage {
     rows = ['1', '2', '3'];
@@ -7,15 +7,15 @@ class DragPage extends BasePage {
     get dragTab() { return $('~Drag'); }
     get retryButton() { return $('~button-Retry'); }
 
-    async getSuccessMessage(text: string) {
+    async getSuccessMessage(text) {
         return $(`android=new UiSelector().text("${text}")`);
     }
 
-    async getDragElement(col: string, row: string) {
+    async getDragElement(col, row) {
         return $(`~drag-${col}${row}`);
     }
 
-    async getDropElement(col: string, row: string) {
+    async getDropElement(col, row) {
         return $(`~drop-${col}${row}`);
     }
 
@@ -27,7 +27,7 @@ class DragPage extends BasePage {
         await this.tapElement(this.retryButton);
     }
 
-    async dragToTarget(col: string, row: string) {
+    async dragToTarget(col, row) {
         const drag = await this.getDragElement(col, row);
         const drop = await this.getDropElement(col, row);
         await this.dragAndDropElement(drag, drop);
