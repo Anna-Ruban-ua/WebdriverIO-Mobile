@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","25716","TC04 Swipe Validation","","Tue May 06 16:13:12 GMT 2025","passed","Tue May 06 16:13:38 GMT 2025","","Swipe Validation","",""
+"","11536","TC02 Login Form Validation","","Tue May 06 16:13:12 GMT 2025","passed","Tue May 06 16:13:24 GMT 2025","","Login functionality","",""
+"","13897","TC01 Sign Up Form Validation","","Tue May 06 16:13:12 GMT 2025","passed","Tue May 06 16:13:26 GMT 2025","","Sign Up Functionality","",""
+"","35098","TC05 Drag Validation","","Tue May 06 16:13:20 GMT 2025","passed","Tue May 06 16:13:56 GMT 2025","","Drag Validation","",""
+"","20306","TC03 Forms Validation","","Tue May 06 16:13:10 GMT 2025","passed","Tue May 06 16:13:30 GMT 2025","","Form Validation","",""
