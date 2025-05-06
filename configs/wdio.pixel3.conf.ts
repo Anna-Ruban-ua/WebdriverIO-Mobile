@@ -2,6 +2,7 @@ import { config as base } from '../wdio.conf.ts';
 
 export const config = {
   ...base,
+  specs: base.specs,
   capabilities: [{
     project: 'Webdriverio Android Project',
     build: 'Webdriverio Android Pixel 3',
