@@ -16,5 +16,12 @@ export const config = {
   mochaOpts: {
     ui: 'bdd',
     timeout: 120000
-  }
+  },
+  reporters: ['spec',
+    ['allure', {
+      outputDir: 'allure-results',
+      disableWebdriverStepsReporting: true,
+      disableWebdriverScreenshotsReporting: false
+    }]
+  ],
 };

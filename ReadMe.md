@@ -8,7 +8,7 @@ This repository contains automated mobile UI tests for the Android Native Demo A
 
 Detailed test cases are documented in [this spreadsheet](https://docs.google.com/spreadsheets/d/1kFxCbMbhzeUhoP5vcxhSACwCvcWFo7M_DHx_i7fOb7Q/edit?pli=1&gid=0#gid=0).
 
-## 📄 Latest [Allure Report](https://dfgh).
+## 📄 Latest [Allure Report](https://anna-ruban-ua.github.io/WebdriverIO-Mobile/).
 
 ## Requirements
 
