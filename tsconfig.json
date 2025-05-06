@@ -25,6 +25,6 @@
   "include": [
     "**/*.ts",
     "wdio.conf.ts",
-    "wdio.browserstack.conf.ts"
+    "configs/**/*.ts"
   ]
 }
