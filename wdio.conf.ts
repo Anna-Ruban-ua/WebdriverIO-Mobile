@@ -1,6 +1,8 @@
+import 'ts-node/register';
+
 export const config = {
-  user: '${BROWSERSTACK_USERNAME}',
-  key: '${BROWSERSTACK_ACCESS_KEY}',
+  user: process.env.BROWSERSTACK_USERNAME,
+  key: process.env.BROWSERSTACK_ACCESS_KEY,
   
     updateJob: false,
     specs: [
